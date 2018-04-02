@@ -66,5 +66,12 @@ feature 'Viewing the schedule' do
       click_on('HERE')
       expect(current_path).to eq('/schedule/2017/monday')
     end
+
+    scenario 'link from previous program should link to schedule' do
+      visit 'program/previous'
+      expect(page).to have_content('EXPLORE PAST SCHEDULES')
+      click_on('EXPLORE PAST SCHEDULES')
+      expect(current_path).to eq('/schedule/2017/monday')
+    end
   end
 end

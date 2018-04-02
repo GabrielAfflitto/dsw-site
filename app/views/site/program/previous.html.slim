@@ -1,6 +1,7 @@
 = render partial: 'layouts/shared/program_nav', locals: { item: :previous }
 
 .section-content.sm-centered
+  h6 = link_to 'EXPLORE PAST SCHEDULES', page_path(page: 'schedule/2017/monday'), class: 'btn-cta'
   - Submission.with_slides_or_video.group_by(&:year).each do |year, submissions|
     h1 #{year} Slides &amp; Videos
     .list-flex-container
